@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 18:57:15 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/07 21:00:09 by tsignore         ###   ########.fr       */
+/*   Created: 2020/07/07 20:15:02 by tsignore          #+#    #+#             */
+/*   Updated: 2020/07/07 21:07:27 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
-}
-
-int	ft_strcmp(char *s1, char *s2)
-{
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
