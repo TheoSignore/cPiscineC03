@@ -6,13 +6,13 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 08:50:47 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/08 09:09:45 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/08 15:34:29 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int 			i;
+	int				i;
 	unsigned int	j;
 
 	i = 0;
