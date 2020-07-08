@@ -6,7 +6,7 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 21:09:54 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/07 21:32:34 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/08 08:46:08 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ char	*ft_strcat(char *dest, char *src)
 	j = 0;
 	while (src[j] != '\0')
 	{
-		dest[i] = src[j];
+		dest[i + j] = src[j];
 		j++;
-		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
