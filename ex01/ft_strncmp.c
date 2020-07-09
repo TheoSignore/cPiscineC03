@@ -6,7 +6,7 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 20:15:02 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/08 21:01:40 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/09 16:53:48 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 
 	i = 0;
-	while (i < n + 1)
+	while (i < n + 1 && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
