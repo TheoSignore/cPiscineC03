@@ -6,9 +6,19 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:36:10 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/13 20:10:15 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:18:16 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+unsigned int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
