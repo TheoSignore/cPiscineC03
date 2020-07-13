@@ -6,7 +6,7 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:36:10 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/10 14:19:47 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/13 11:17:16 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 		j++;
 	}
-	dest[j] = '\0';
-	return (dst_len + src_len);
+	if (dst_len < size)
+	{
+		dest[j] = '\0';
+		return (dst_len + src_len);
+	}
+	return (dst_len + src_len - (dst_len - size));
 }
