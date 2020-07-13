@@ -6,41 +6,27 @@
 /*   By: tsignore <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 15:36:10 by tsignore          #+#    #+#             */
-/*   Updated: 2020/07/13 11:17:16 by tsignore         ###   ########.fr       */
+/*   Updated: 2020/07/13 20:10:15 by tsignore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int size;
-
-	size = 0;
-	while (str[size] != '\0')
-		size++;
-	return (size);
-}
-
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int i;
 	unsigned int j;
-	unsigned int dst_len;
-	unsigned int src_len;
+	unsigned int size_dest;
 
-	dst_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	i = 0;
-	j = dst_len;
-	while (src[i] != '\0' && j < size - 1)
+	size_dest = ft_strlen(dest);
+	j = 0;
+	if (ft_strlen(dest) < size)
 	{
-		dest[j] = src[i];
-		i++;
-		j++;
+		while ((j < size - size_dest - 1) && (j < ft_strlen(src)))
+		{
+			dest[size_dest + j] = src[j];
+			j++;
+		}
+		dest[size_dest + j] = '\0';
+		return (size_dest + ft_strlen(src));
 	}
-	if (dst_len < size)
-	{
-		dest[j] = '\0';
-		return (dst_len + src_len);
-	}
-	return (dst_len + src_len - (dst_len - size));
+	else
+		return (ft_strlen(dest) + ft_strlen(src) - (ft_strlen(dest) - size));
 }
